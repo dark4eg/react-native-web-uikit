@@ -1,0 +1,76 @@
+import * as React from "react";
+import { Animated } from "react-native";
+import { IdType } from "../Subscriber";
+declare type Props = {
+    styles: any;
+};
+declare type modalType = {
+    component: React.ReactNode;
+    id: IdType;
+    onBackdropPress?: Function;
+    containerStyles?: any;
+    position: Animated.Value;
+    initialPosition: number;
+    closeOnBackdropPress?: boolean;
+    initialTop: number;
+    initialLeft: number;
+    initialWidth: number;
+    initialHeight: number;
+    verticalDirection: boolean;
+    shadow: number;
+};
+declare type State = {
+    showModal: boolean;
+    modals: Array<modalType>;
+    modalVerticalPosition: Animated.Value;
+    showBackDrop: boolean;
+};
+declare class RootWrapper extends React.PureComponent<Props, State> {
+    private INITIAL_MODAL_HORIZONTAL_POSITION;
+    private INITIAL_MODAL_VERTICAL_POSITION;
+    state: State;
+    componentDidMount: () => void;
+    render(): JSX.Element;
+    private renderBackDrop;
+    private onBackDropPress;
+    private renderModals;
+    private renderModal;
+    private renderVerticalModal;
+    private renderHorizontalModal;
+    private animateModalVerticalAppearance;
+    private animateModalHorizontalAppearance;
+    animateAppearance: (modal: modalType) => {
+        animateWidth: () => Animated.CompositeAnimation;
+        animateHeight: () => Animated.CompositeAnimation;
+        animateLeft: () => Animated.CompositeAnimation;
+        animateTop: () => Animated.CompositeAnimation;
+        animateVerticalPosition: () => Animated.CompositeAnimation;
+        animateHorizontalPosition: () => Animated.CompositeAnimation;
+    };
+    private animateModalStretch;
+    private animateModalVerticalStretch;
+    private animateVerticalStretch;
+    private animateModalHorizontalStretch;
+    private animateHorizontalStretch;
+    private changeModalPosition;
+    private changeModalHorizontalPosition;
+    private changeModalVerticalPosition;
+    private findModalIndexById;
+    private deleteModalsById;
+    private animateModalsDisappearanceSequence;
+    private animateModalDisappearance;
+    private deleteModals;
+    private isModalBackDropShown;
+    private showModal;
+    private createCurrentModalState;
+    private getInitialModalPosition;
+    private setTopModalValue;
+    private setLeftModalValue;
+    private isModalAlreadyExist;
+    private parseContainerStyles;
+    private parseModalHorizontalPositionStatement;
+    private parseModalVerticalPositionStatement;
+    private parseModalVerticalPositionStretchingStatement;
+    private parseModalHorizontalPositionStretchingStatement;
+}
+export default RootWrapper;
